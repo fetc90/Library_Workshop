@@ -1,7 +1,8 @@
 class Library
   attr_reader :books
 
-  # Initializes books, making books visibile outside of the class Library behaviour
+  # The list of books are now visibile outside of the class Library.
+  # attr_reader is not a method, it is simply displaying the array.
 
   def initialize
     @books = [
@@ -19,26 +20,31 @@ class Library
     books
   end
 
-  # PURPOSE: The input of .list_books method will output the array of books.
-  # TEST: (that the array books reacts to the method list_books)
+  # PURPOSE: The purpose is to show the list of books.
+  # The input of .list_books method will output the array of books.
+  # TEST: The array books reacts to the method list_books
+  # TEST: The output matches the books
 
   def add_book(book)
     books.push(book)
   end
 
-  # PURPOSE: The input of the .add_book method takes an argument of the book.
+  # PURPOSE: To add a new book to the array of books
+  # The input of the .add_book method takes an argument of the book.
   # The output is the array with the book title.
-  # TEST:
+  # TEST: The books array reacts to the .add_book method using 1 argument
+  # and the array 'Books' includes the book.
 
-  # Test to see the array 'Books' includes the book. - JUST WRITE PURPOSE
-   # NOT TEST YET
 
   def find_book(title)
     books.select{ |book| book[:title] == title }.first
   end
-# PURPOSE: Output the book by searching for the title
+# PURPOSE: To find a book title
+# The input is the .find_book definition
+#which takes 1 argument, the title
+#The output is the book selected from the array
 # TEST:
-
+# The input arguement is included in the array of books
 
 
   def remove_book(title)
@@ -47,11 +53,15 @@ class Library
 
   # PURPOSE: Delete a book title in the array. Return the array without
   # the book title
+  # TEST: Test that title argument that was input is not included in the output array
+
 
   def all_books_by_subject(subject)
     books.select{ |book| book[:subject] == subject }
   end
 end
 
-# PURPOSE: Iterate through the array to output the book by subject. The array
+# PURPOSE: Show all the books with that subject.
+# Iterate through the array to output the book by subject. The array
 # will stay the same but the output will be 1 element: the book.
+# TEST: The input subject matches the output of books.
